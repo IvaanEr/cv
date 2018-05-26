@@ -1,0 +1,271 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{burgundy}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.80,top=8mm,textheight=1000pt,footskip=.25in]{geometry}
+%\usepackage[a4paper,bindingoffset=0.2in,%
+            % left=1in,right=1in,top=1in,bottom=1in,%
+            % footskip=.25in]{geometry}
+
+% \setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% Magic para tener foto en el banking type
+\patchcmd{\makehead}
+  {\hfil}
+  {\hspace*{0.15\textwidth}}
+  {}
+  {}
+\patchcmd{\makehead}
+  {\setlength{\makeheaddetailswidth}{0.8\textwidth}}
+  {\setlength{\makeheaddetailswidth}{0.67\textwidth}}
+  {}
+  {}
+\patchcmd{\makehead}
+  {\\[2.5em]}
+  {\hfil\raisebox{-.7cm}{\framebox{\includegraphics[width=\@photowidth]{\@photo}}}\\[2.5em]}
+  {}
+  {}  
+
+% personal data
+\name{Iván}{Ernandorena}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Mendoza 421}{Rosario, Santa Fe 2000}{Argentina}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+54~(341)~3509249}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\email{ivan.ernandorena@gmail.com}                               % optional, remove / comment the line if not wanted
+% \homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+% \social[linkedin]{Iván Ernandorena}                        % optional, remove / comment the line if not wanted
+% \social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+\social[github]{IvaanEr}                              % optional, remove / comment the line if not wanted
+% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{picture}                      % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Soy un estudiante de Ciencias de la Computación cursando el quinto año de la carrera. Me caracterizo por mi honestidad y responsabilidad, valores que considero fundamentales para mi desenvolvimiento profesional}                                 % optional, remove / comment the line if not wanted
+\quote{I'm a Computer Science student in my last year. I'm characterized by my honesty and responsibility, values I consider crucial for my personal and professional development.}
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+% \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Studies}
+\cventry{2014 -- *}{National University of Rosario}{Computer Science Degree}{Rosario, Santa Fe, Argentina}{}
+{Currently undertaking the last year of my undergraduate studies. \\ So far, I've had a GPA of 8.3 out of 10.}  % arguments 3 to 6 can be left empty
+\cventry{2011 -- 2014}{Institute Marta Morteo de Baron}{First Certificate in English}{San Nicol\'as, Buenos Aires, Argentina}{}{}
+\cventry{2011 -- 2012}{Nasa Computación}{PC Repairing Curse}{San Nicol\'as, Buenos Aires, Argentina}{}{}
+\cventry{2008 -- 2013}{Nuestra Señora de la Misericordia School}{Bachelor's degree in Natural Science}{San Nicol\'as, Buenos Aires, Argentina}{}{}
+
+% \section{Master thesis}
+% \cvitem{title}{\emph{Title}}
+% \cvitem{supervisors}{Supervisors}
+% \cvitem{description}{Short thesis abstract}
+
+\section{Experience}
+  \subsection{Jobs}
+  \cventry{August 2017--*}{Backend Software Developer}{Leapsight}{Rosario, Santa Fe, Argentina}{}
+  {Design and implementation of an IoT proyect with Erlang. Working with agile methodologies and\newline
+  {using platforms, technologies and frameworks like Kafka, Riak KV, Riak TS, VueJS, etc.}
+% \begin{itemize}%
+% \item Achievement 2, with sub-achievements:
+  % \begin{itemize}%
+  % \item Sub-achievement (a);
+  % \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+  % %   \begin{itemize}
+  % %   \item Sub-sub-achievement i;
+  % %   \item Sub-sub-achievement ii;
+  % %   \item Sub-sub-achievement iii;
+  % %   \end{itemize}
+  % % \item Sub-achievement (c);
+  % \end{itemize}
+% \end{itemize}  
+}
+    % \begin{itemize}
+    %   \item Desarrollador de software en Leapsight. \\
+    %         Diseño e implementación de un proyecto IoT bajo Erlang con metodologías ágiles, utilizando plataformas, tecnologías y frameworks como Kafka, Riak KV, Riak TS, Vuejs, entre otros.
+    % \end{itemize}
+  \subsection{College Projects}
+    % \renewcommand{\labelitemi}{$\bullet$}
+    \begin{itemize}
+      \item Little distributed system client-server in Erlang.
+      \item Operative System NachOS.
+      \item Parser and evaluator of an interpreter of simple arithmetic expressions and lambda calculus.
+    \end{itemize}
+  \subsection{Miscellany}
+    \begin{itemize}
+      \item Organization of the Jornadas de Cs. de la Computaci\'on 2017. \\
+      Event at the University with the objective of promoting the contact of students with
+      researchers and professionals in subjects related to the field of computer science.
+      % \item Assisstant in a Tax Accounting Study during the summer 2016-2017.
+    \end{itemize}
+  % \subsection{Ambito profesional}
+  % Por el momento no poseo experiencia trabajando profesionalmente.
+
+% \subsection{Vocational}
+% \cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
+% Detailed achievements:%
+% \begin{itemize}%
+% \item Achievement 1;
+% \item Achievement 2, with sub-achievements:
+%   \begin{itemize}%
+%   \item Sub-achievement (a);
+%   \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+%     \begin{itemize}
+%     \item Sub-sub-achievement i;
+%     \item Sub-sub-achievement ii;
+%     \item Sub-sub-achievement iii;
+%     \end{itemize}
+%   \item Sub-achievement (c);
+%   \end{itemize}
+% \item Achievement 3.
+% \end{itemize}}
+% \cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
+% \subsection{Miscellaneous}
+% \cventry{year--year}{Job title}{Employer}{City}{}{Description}
+
+\section{Languages}
+\cvitemwithcomment{Español}{}{Native language}
+\cvitemwithcomment{Ingles}{}{First Certificate in English}
+% \cvitemwithcomment{Language 3}{Skill level}{Comment}
+
+% \section{Conocimientos/Habilidades}
+% \subsection{Lenguajes de Programación}
+% \begin{itemize}
+%   \item{\textbf{C++}}
+%   \item{\textbf{Python}}
+%   \item{\textbf{Haskell}}
+%   \item{\textbf{Erlang}}
+% \end{itemize}
+% \subsection{Lenguajes de Especificación}
+% \begin{itemize}
+%   \item{\textbf{Z}}
+%   \item{\textbf{Statecharts}}
+%   \item{\textbf{CSP}}
+%   \item{\textbf{TLA+}}
+% \end{itemize}
+
+% \section{Conocimientos/Habilidades}
+% \subsection{Lenguajes de Programación}
+%   \textbf{C/C++, Python, Haskell, Erlang}
+
+% \subsection{Lenguajes de Especificación}
+%   \textbf{Z, Statecharts, CSP, TLA+}
+
+% \subsection{Versionadores}
+%   \textbf{Git, Subversion}
+
+% \subsection{Sistemas Operativos}
+%   \textbf{Linux, Windows}
+
+\section{Knowledge}
+\cvitemwithcomment{Programming languages}{}{\textbf{C/C++, Python, Haskell, Erlang, JavaScript, VueJS, LaTeX}}
+
+\cvitemwithcomment{Specification languages}{}{\textbf{Z, Statecharts, CSP, TLA+}}
+
+\cvitemwithcomment{Pattern desings and Software architectures}{}{\textbf{Varios}}
+
+\cvitemwithcomment{Version control}{}{\textbf{Git, Subversion}}
+
+\cvitemwithcomment{Operative Systems}{}{\textbf{Linux, Windows}}
+%\section{Intereses}
+
+% \section{Hobbies e intereses}
+%   \cvlistdoubleitem{Taekwon-Do}{Sistemas distribuidos}%{2do Dan Internacional}
+%   %{Además de ser un hermoso deporte es un filosofia que te enseña a vivir la vida con cortesia, integridad,
+%   %perseverancia y un espiritu indomable para poder ser más grande que cualquier problema y sobreponerte ante ellos.}
+%   \cvlistdoubleitem{Running}{Bases de datos}%{Fanático de la ciencia ficción y superheroes}
+%   \cvlistdoubleitem{Impresión 3D}{}
+%   \cvlistdoubleitem{Películas y libros -- ciencia ficción}{}
+  
+  % \cvitem{\large Sistemas distribuidos}{}
+  % \cvitem{\large Base de Datos}{}
+
+
+% \section{Extra 1}
+% \cvlistitem{Item 1}
+% \cvlistitem{Item 2}
+% \cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+
+% \section{Extra 2}
+% \cvlistdoubleitem{Item 1}{Item 4}
+% \cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
+% \cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+
+% \section{References}
+% \begin{cvcolumns}
+%   \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%   \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%   \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+% \end{cvcolumns}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+% \nocite{*}
+% \bibliographystyle{plain}
+% \bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% % Publications from a BibTeX file using the multibib package
+% %\section{Publications}
+% %\nocitebook{book1,book2}
+% %\bibliographystylebook{plain}
+% %\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+% %\nocitemisc{misc1,misc2,misc3}
+% %\bibliographystylemisc{plain}
+% %\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+% \clearpage
+% %-----       letter       ---------------------------------------------------------
+% % recipient data
+% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+% \date{January 01, 1984}
+% \opening{Dear Sir or Madam,}
+% \closing{Yours faithfully,}
+% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+% \makelettertitle
+
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+
+% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+
+% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+
+% Albert Einstein discovered that $e=mc^2$ in 1905.
+
+% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+
+% \makeletterclosing
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+
+\end{document}
+%% end of file `template.tex'.
